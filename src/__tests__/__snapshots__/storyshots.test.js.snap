@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Event default 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "bottom": 0,
+      "display": "flex",
+      "left": 0,
+      "overflow": "auto",
+      "position": "fixed",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "margin": "auto",
+        "maxHeight": "100%",
+      }
+    }
+  >
+    <article
+      className="css-0"
+      itemScope={true}
+      itemType="http://schema.org/Event"
+    >
+      <time
+        className="css-0"
+        content="2019-03-28T22:47:35.292Z"
+        itemProp="startDate"
+      >
+        Thursday, March 28, 2019
+      </time>
+      <span
+        className="css-0"
+      >
+        11:47:35 PM
+      </span>
+      <h2
+        className="css-0"
+        itemProp="name"
+      >
+        Typhoon with Radiation City
+      </h2>
+      <div
+        className="css-0"
+        itemProp="location"
+        itemScope={true}
+        itemType="http://schema.org/Place"
+      >
+        <span
+          className="css-0"
+          itemProp="name"
+        >
+          The Hi-Dive
+        </span>
+        <div
+          className="css-0"
+          itemProp="address"
+          itemScope={true}
+          itemType="http://schema.org/PostalAddress"
+        >
+          <span
+            className="css-0"
+            itemProp="streetAddress"
+          >
+            7 S. Broadway
+          </span>
+          <span
+            className="css-0"
+            itemProp="addressLocality"
+          >
+            Denver
+          </span>
+          <span
+            className="css-0"
+            itemProp="addressRegion"
+          >
+            CO
+          </span>
+          <span
+            className="css-0"
+            itemProp="postalCode"
+          >
+            80209
+          </span>
+        </div>
+      </div>
+      <div
+        className="css-0"
+        itemProp="offers"
+        itemScope={true}
+        itemType="http://schema.org/Offer"
+      >
+        <div
+          className="css-0"
+        >
+          <span
+            className="css-0"
+            content={13}
+            itemProp="price"
+          >
+            €13.00
+          </span>
+          <span
+            className="css-0"
+            content="EUR"
+            itemProp="priceCurrency"
+          />
+          <a
+            className="css-0"
+            href="http://www.ticketfly.com/purchase/309433"
+            itemProp="url"
+          >
+            Acheter
+          </a>
+        </div>
+      </div>
+    </article>
+  </div>
+</div>
+`;
