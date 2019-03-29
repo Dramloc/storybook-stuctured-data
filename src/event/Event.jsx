@@ -106,12 +106,14 @@ AddressPostalCode.defaultProps = {
   itemProp: 'postalCode',
 };
 
-const EventOffers = styled('div')({
+const EventOffers = styled('ol')({
   display: 'flex',
   flexDirection: 'column',
   borderTop: '1px solid #eee',
   marginTop: 10,
+  marginBottom: 0,
   paddingTop: 10,
+  paddingLeft: 0,
 });
 EventOffers.defaultProps = {
   itemProp: 'offers',
@@ -119,7 +121,7 @@ EventOffers.defaultProps = {
   itemType: 'http://schema.org/Offer',
 };
 
-const Offer = styled('div')({
+const Offer = styled('li')({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
