@@ -24,102 +24,119 @@ exports[`Storyshots Event default 1`] = `
     }
   >
     <article
-      className="css-0"
+      className="css-1u5tknu"
       itemScope={true}
       itemType="http://schema.org/Event"
     >
-      <time
-        className="css-0"
-        content="2019-03-28T22:47:35.292Z"
-        itemProp="startDate"
+      <header
+        className="css-1960eul"
       >
-        Thursday, March 28, 2019
-      </time>
-      <span
-        className="css-0"
-      >
-        11:47:35 PM
-      </span>
+        <time
+          className="css-0"
+          content="2019-03-28T19:00:00.000Z"
+          itemProp="startDate"
+        >
+          Thursday, March 28, 2019
+        </time>
+         — 
+        <span
+          className="css-0"
+        >
+          8:00 PM
+        </span>
+      </header>
       <h2
-        className="css-0"
+        className="css-18g2mxq"
         itemProp="name"
       >
         Typhoon with Radiation City
       </h2>
-      <div
-        className="css-0"
-        itemProp="location"
-        itemScope={true}
-        itemType="http://schema.org/Place"
+      <footer
+        className="css-j7qwjs"
       >
-        <span
-          className="css-0"
-          itemProp="name"
-        >
-          The Hi-Dive
-        </span>
         <div
-          className="css-0"
-          itemProp="address"
+          className="css-1960eul"
+          itemProp="location"
           itemScope={true}
-          itemType="http://schema.org/PostalAddress"
+          itemType="http://schema.org/Place"
         >
           <span
             className="css-0"
-            itemProp="streetAddress"
+            itemProp="name"
           >
-            7 S. Broadway
+            The Hi-Dive
           </span>
+          , 
           <span
             className="css-0"
-            itemProp="addressLocality"
+            itemProp="address"
+            itemScope={true}
+            itemType="http://schema.org/PostalAddress"
           >
-            Denver
-          </span>
-          <span
-            className="css-0"
-            itemProp="addressRegion"
-          >
-            CO
-          </span>
-          <span
-            className="css-0"
-            itemProp="postalCode"
-          >
-            80209
+            <span
+              className="css-0"
+              itemProp="streetAddress"
+            >
+              7 S. Broadway
+            </span>
+            , 
+            <span
+              className="css-0"
+              itemProp="addressLocality"
+            >
+              Denver
+            </span>
+            , 
+            <span
+              className="css-0"
+              itemProp="addressRegion"
+            >
+              CO
+            </span>
+             
+            <span
+              className="css-0"
+              itemProp="postalCode"
+            >
+              80209
+            </span>
           </span>
         </div>
-      </div>
-      <div
-        className="css-0"
-        itemProp="offers"
-        itemScope={true}
-        itemType="http://schema.org/Offer"
-      >
         <div
-          className="css-0"
+          className="css-14jfzl2"
+          itemProp="offers"
+          itemScope={true}
+          itemType="http://schema.org/Offer"
         >
-          <span
-            className="css-0"
-            content={13}
-            itemProp="price"
+          <div
+            className="css-lyqcsz"
           >
-            €13.00
-          </span>
-          <span
-            className="css-0"
-            content="EUR"
-            itemProp="priceCurrency"
-          />
-          <a
-            className="css-0"
-            href="http://www.ticketfly.com/purchase/309433"
-            itemProp="url"
-          >
-            Acheter
-          </a>
+            <div
+              className="css-nw39uo"
+              itemProp="price"
+            >
+              <span
+                className="css-0"
+                content={13}
+              >
+                €13.00
+              </span>
+              <span
+                className="css-0"
+                content="EUR"
+                itemProp="priceCurrency"
+              />
+            </div>
+            <a
+              className="css-qbg710"
+              href="http://www.ticketfly.com/purchase/309433"
+              itemProp="url"
+            >
+              Acheter
+            </a>
+          </div>
         </div>
-      </div>
+      </footer>
     </article>
   </div>
 </div>

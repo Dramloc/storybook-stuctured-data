@@ -5,11 +5,39 @@ import { formatDate } from './formatDate';
 import { formatPrice } from './formatPrice';
 import { formatTime } from './formatTime';
 
-const EventWrapper = styled('article')({});
+const EventWrapper = styled('article')({
+  width: '100%',
+  marginBottom: 25,
+  backgroundColor: '#fff',
+  padding: '12px 15px',
+  fontFamily: [
+    '-apple-system',
+    'BlinkMacSystemFont',
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    'sans-serif',
+  ],
+  WebkitFontSmoothing: 'antialiased',
+  MozOsxFontSmoothing: 'grayscale',
+  border: '1px solid #eee',
+  borderLeft: '3px solid #41C1F2',
+  boxSizing: 'border-box',
+});
 EventWrapper.defaultProps = {
   itemScope: true,
   itemType: 'http://schema.org/Event',
 };
+
+const EventHeader = styled('header')({
+  color: '#555',
+  fontSize: 12,
+});
 
 const EventStartDate = styled('time')({});
 EventStartDate.defaultProps = {
@@ -18,12 +46,28 @@ EventStartDate.defaultProps = {
 
 const EventTime = styled('span')({});
 
-const EventName = styled('h2')({});
+const EventName = styled('h2')({
+  display: 'block',
+  marginTop: 10,
+  fontSize: 14,
+  fontWeight: 600,
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+});
 EventName.defaultProps = {
   itemProp: 'name',
 };
 
-const EventLocation = styled('div')({});
+const EventFooter = styled('footer')({
+  display: 'flex',
+  flexDirection: 'column',
+});
+
+const EventLocation = styled('div')({
+  color: '#555',
+  fontSize: 12,
+});
 EventLocation.defaultProps = {
   itemProp: 'location',
   itemScope: true,
@@ -35,7 +79,7 @@ LocationName.defaultProps = {
   itemProp: 'name',
 };
 
-const LocationAddress = styled('div')({});
+const LocationAddress = styled('span')({});
 LocationAddress.defaultProps = {
   itemProp: 'address',
   itemScope: true,
@@ -62,16 +106,35 @@ AddressPostalCode.defaultProps = {
   itemProp: 'postalCode',
 };
 
-const EventOffers = styled('div')({});
+const EventOffers = styled('div')({
+  display: 'flex',
+  flexDirection: 'column',
+  borderTop: '1px solid #eee',
+  marginTop: 10,
+  paddingTop: 10,
+});
 EventOffers.defaultProps = {
   itemProp: 'offers',
   itemScope: true,
   itemType: 'http://schema.org/Offer',
 };
 
-const OfferWrapper = styled('div')({});
+const Offer = styled('div')({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  '& + &': {
+    marginTop: 10,
+  },
+});
 
-const OfferPrice = styled('span')({});
+const OfferPrice = styled('div')({
+  color: '#555',
+  fontSize: 12,
+  marginRight: 10,
+});
+
+const OfferPriceValue = styled('span')({});
 OfferPrice.defaultProps = {
   itemProp: 'price',
 };
@@ -81,38 +144,56 @@ OfferPriceCurrency.defaultProps = {
   itemProp: 'priceCurrency',
 };
 
-const OfferURL = styled('a')({});
+const OfferURL = styled('a')({
+  fontSize: 11,
+  color: '#41C1F2',
+  textDecoration: 'none',
+  textTransform: 'uppercase',
+  letterSpacing: '0.02em',
+  fontWeight: 700,
+});
 OfferURL.defaultProps = {
   itemProp: 'url',
 };
 
 export const Event = ({ event }) => (
   <EventWrapper>
-    <EventStartDate content={event.startDate.toISOString()}>
-      {formatDate(event.startDate)}
-    </EventStartDate>
-    <EventTime>{formatTime(event.startDate)}</EventTime>
+    <EventHeader>
+      <EventStartDate content={event.startDate.toISOString()}>
+        {formatDate(event.startDate)}
+      </EventStartDate>
+      {' — '}
+      <EventTime>{formatTime(event.startDate)}</EventTime>
+    </EventHeader>
     <EventName>{event.name}</EventName>
-    <EventLocation>
-      <LocationName>{event.location.name}</LocationName>
-      <LocationAddress>
-        <StreetAddress>{event.location.address.streetAddress}</StreetAddress>
-        <AddressLocality>{event.location.address.addressLocality}</AddressLocality>
-        <AddressRegion>{event.location.address.addressRegion}</AddressRegion>
-        <AddressPostalCode>{event.location.address.postalCode}</AddressPostalCode>
-      </LocationAddress>
-    </EventLocation>
-    <EventOffers>
-      {event.offers.map(offer => (
-        <OfferWrapper key={offer.url}>
-          <OfferPrice content={offer.price}>
-            {formatPrice(offer.price, offer.priceCurrency)}
-          </OfferPrice>
-          <OfferPriceCurrency content={offer.priceCurrency} />
-          <OfferURL href={offer.url}>Acheter</OfferURL>
-        </OfferWrapper>
-      ))}
-    </EventOffers>
+    <EventFooter>
+      <EventLocation>
+        <LocationName>{event.location.name}</LocationName>
+        {', '}
+        <LocationAddress>
+          <StreetAddress>{event.location.address.streetAddress}</StreetAddress>
+          {', '}
+          <AddressLocality>{event.location.address.addressLocality}</AddressLocality>
+          {', '}
+          <AddressRegion>{event.location.address.addressRegion}</AddressRegion>
+          {' '}
+          <AddressPostalCode>{event.location.address.postalCode}</AddressPostalCode>
+        </LocationAddress>
+      </EventLocation>
+      <EventOffers>
+        {event.offers.map(offer => (
+          <Offer key={offer.url}>
+            <OfferPrice>
+              <OfferPriceValue content={offer.price}>
+                {formatPrice(offer.price, offer.priceCurrency)}
+              </OfferPriceValue>
+              <OfferPriceCurrency content={offer.priceCurrency} />
+            </OfferPrice>
+            <OfferURL href={offer.url}>Acheter</OfferURL>
+          </Offer>
+        ))}
+      </EventOffers>
+    </EventFooter>
   </EventWrapper>
 );
 

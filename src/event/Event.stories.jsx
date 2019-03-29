@@ -17,7 +17,7 @@ storiesOf('Event', module)
     <Event
       event={{
         name: text('Name', 'Typhoon with Radiation City'),
-        startDate: date('Date', new Date('2019-03-28T22:47:35.292Z')),
+        startDate: date('Date', new Date('2019-03-28T19:00:00.000Z')),
         location: {
           name: text('Location Name', 'The Hi-Dive'),
           address: {
