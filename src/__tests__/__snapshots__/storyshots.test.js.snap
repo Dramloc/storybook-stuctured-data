@@ -102,13 +102,13 @@ exports[`Storyshots Event default 1`] = `
             </span>
           </span>
         </div>
-        <div
-          className="css-14jfzl2"
+        <ol
+          className="css-azbbpt"
           itemProp="offers"
           itemScope={true}
           itemType="http://schema.org/Offer"
         >
-          <div
+          <li
             className="css-lyqcsz"
           >
             <div
@@ -134,8 +134,8 @@ exports[`Storyshots Event default 1`] = `
             >
               Acheter
             </a>
-          </div>
-        </div>
+          </li>
+        </ol>
       </footer>
     </article>
   </div>
