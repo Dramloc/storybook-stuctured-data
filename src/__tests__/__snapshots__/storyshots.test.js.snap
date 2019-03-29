@@ -113,11 +113,11 @@ exports[`Storyshots Event default 1`] = `
           >
             <div
               className="css-nw39uo"
-              itemProp="price"
             >
               <span
                 className="css-0"
                 content={13}
+                itemProp="price"
               >
                 €13.00
               </span>

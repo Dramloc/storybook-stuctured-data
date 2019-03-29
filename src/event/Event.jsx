@@ -137,7 +137,7 @@ const OfferPrice = styled('div')({
 });
 
 const OfferPriceValue = styled('span')({});
-OfferPrice.defaultProps = {
+OfferPriceValue.defaultProps = {
   itemProp: 'price',
 };
 
